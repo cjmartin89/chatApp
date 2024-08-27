@@ -1,7 +1,6 @@
 import 'package:chat_app/auth/auth_service.dart';
 import 'package:chat_app/components/my_button.dart';
 import 'package:chat_app/pages/my_textfield.dart';
-import 'package:chat_app/pages/register_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -10,7 +9,7 @@ class LoginPage extends StatelessWidget {
   final TextEditingController _pwController = TextEditingController();
 
   // tap to go to register page
-  void Function()? onTap;
+  final void Function()? onTap;
 
   // login method
   void login(BuildContext context) async {
@@ -25,6 +24,7 @@ class LoginPage extends StatelessWidget {
 
     // catch any errors
     catch (e) {
+      // ignore: use_build_context_synchronously
       showDialog(context: context,
        builder: (context) => AlertDialog(
         title: Text(e.toString()),

@@ -10,13 +10,14 @@ class RegisterPage extends StatelessWidget {
   final TextEditingController _confirmPwController = TextEditingController();
 
   // tap to go to register page
-  void Function()? onTap;
+  final void Function()? onTap;
 
   RegisterPage({super.key, required this.onTap});
 
   // register
   void register(BuildContext context) {
     // get auth service
+    // ignore: no_leading_underscores_for_local_identifiers
     final _auth = AuthService();
 
     // passwords match -> create user
